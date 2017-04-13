@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="Fragment (Flex)"
+    description="Creates a blank fragment that is compatible back to API level 4."
+    minApi="7"
+    minBuildApi="8">
+
+    <category value="Fragment" />
+
+    <dependency name="android-support-v4" revision="8" />
+
+    <parameter
+        id="business"
+        name="Business Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Main"
+        help="业务的名字" />
+
+    <parameter
+        id="className"
+        name="Fragment Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        suggest="${business}Fragment"
+        help="The name of the fragment class to create" />
+
+    <parameter
+        id="generatePresenter"
+        name="Generate Presenter File"
+        type="boolean"
+        default="true"
+        help="If true, a presenter file will be generated" />
+
+    <parameter
+        id="presenterClass"
+        name="Presenter Name"
+        type="string"
+        constraints="class|nonempty"
+        suggest="${business}Presenter"
+        help="The name of the presenter class" />
+
+    <parameter
+        id="includeLayout"
+        name="Create layout XML?"
+        type="boolean"
+        default="true"
+        help="Generate a layout XML for the fragment" />
+
+    <parameter
+        id="fragmentName"
+        name="Fragment Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="fragment_blank"
+        visibility="includeLayout"
+        suggest="fragment_${classToResource(business)}"
+        help="The name of the layout to create" />
+
+    <parameter
+        id="includeFactory"
+        name="Include fragment factory methods?"
+        type="boolean"
+        default="false"
+        help="Generate static fragment factory methods for easy instantiation" />
+
+    <parameter
+        id="includeCallbacks"
+        name="Include interface callbacks?"
+        type="boolean"
+        default="false"
+        help="Generate event callbacks for communication with an Activity or other fragments" />
+
+    <thumbs>
+        <thumb>template_blank_fragment.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

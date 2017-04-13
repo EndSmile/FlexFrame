@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_marginTop="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_net_error" />
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/deep_grey"
+        android:text="网络异常"/>
+    <TextView
+        android:id="@+id/btn_net_error_reload"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textColor="@color/base_white_100"
+        android:layout_width="133dp"
+        android:layout_height="37dp"
+        android:background="@drawable/sel_btn_green"
+        android:text="重新加载"/>
+</LinearLayout>

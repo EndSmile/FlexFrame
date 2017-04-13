@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="deep_grey">#626262</color>
+    <color name="divider">#cacaca</color>
+    <color name="activityBackground">#e5e5e5</color>
+    <color name="base_black_100">#000000</color>
+    <color name="base_white_100">#FFFFFFFF</color>
+
+</resources>

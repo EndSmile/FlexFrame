@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.ldy.flexframe.CommonViewConfig"/>
+
+        <variable
+            name="presenter"
+            type="com.ldy.flexframe.MainPresenter"/>
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.ldy.flexframe.MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{presenter.text}"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{presenter.textK}"
+            />
+        <Button
+            android:id="@+id/btn_main_login"
+            android:onClick="@{(view)->presenter.load()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="login"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="@{CommonViewConfig.getLinearLayoutManager(context)}"
+            app:adapter="@{presenter.testRecycleAdapter}"
+            app:list = "@{presenter.list}"
+            />
+    </LinearLayout>
+</layout>
